@@ -1,17 +1,20 @@
 import {BrowserRouter, Routes, Route} from 'react-router';
-import Homepage from '../pages/homepage';
-import Signup from '../pages/Signup';
-import Signin from '../pages/Signin';
+import {Signup, Dashboard, Signin, Homepage} from '../pages'
+import { Suspense } from 'react';
+
 
 const Router =()=>{
    return(
-      <BrowserRouter>
-         <Routes>
-            <Route path='/' element={<Homepage/>} />
-            <Route path='/Signup' element={<Signup/>} />
-            <Route path='/Signin' element={<Signin/>} />
-         </Routes>
-      </BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+         <BrowserRouter>
+            <Routes>
+               <Route path='/' element={<Homepage/>} />
+               <Route path='/signup' element={<Signup/>} />
+               <Route path='/login' element={<Signin/>} />
+               <Route path='/dashboard' element={<Dashboard/>} />
+            </Routes>
+         </BrowserRouter>
+      </Suspense>
    )
 }
 

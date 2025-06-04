@@ -4,7 +4,7 @@ const Homepage = () =>{
    return(
       <main>
          <h1>Skill Traders</h1>
-         <p>Trade skills, not money !</p>
+         <p>Trade skills, not money.</p>
 
          <div>
             <Link to='/login'>Login</Link>

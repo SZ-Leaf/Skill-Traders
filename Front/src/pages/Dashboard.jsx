@@ -1,4 +1,6 @@
 import { useState, React } from "react";
+import ListingGrid from "../components/ListingGrid";
+import cardsMock from "../mock/CardsMock";
 
 
 const Dashboard = () =>{
@@ -8,18 +10,25 @@ const Dashboard = () =>{
 
    const [activeTab, setActiveTab] = useState('browse');
 
-   const renderTabContent= (tab) =>{
-      switch(tab){
+   const user = "alex";
+
+   const listings = cardsMock.filter(card => !card.private);
+   const myListings = cardsMock.filter(card => !card.private && card.owner === user);
+   const requests = cardsMock.filter(card => card.private && card.designatedTo === user);
+
+   const renderTabContent= () =>{
+      switch(activeTab){
          case 'browse':
             return <ListingGrid listings={listings} />;
          case 'myListings':
             return <ListingGrid listings={myListings} />;
          case 'myRequests':
-            return <RequestList requests={requests} />;
+            return <ListingGrid listings={requests} />;
          default:
             return null;
       }
    };
+   
 
    return(
       <main>
