@@ -54,7 +54,7 @@ const Signup = () => {
    };
    
    return(
-      <main>
+      <>
          <h2>Sign Up</h2>
 
          <form onSubmit={handleRegistration}>
@@ -86,7 +86,7 @@ const Signup = () => {
 
                <button className="btn" type="submit">Register</button>
          </form>
-      </main>
+      </>
    )
 }
 

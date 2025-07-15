@@ -46,7 +46,7 @@ const Signin = () => {
    }
 
    return(
-      <main>
+      <>
          <h2>Login</h2>
 
          <form onSubmit={handleLogin}>
@@ -61,7 +61,7 @@ const Signin = () => {
             </label>
             <button className="btn" type="submit">Register</button>
          </form>
-      </main>
+      </>
    )
 }
 
