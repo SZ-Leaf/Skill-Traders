@@ -3,11 +3,9 @@ import { Link } from "react-router";
 const Homepage = () => {
   return (
     <>
-      <div className="w-full h-full">
-        <h1 className="font-extrabold text-gray-800">
-          Skill Traders
-        </h1>
-        <p className="text-lg text-gray-600 mb-8">Trade skills, not money.</p>
+      <div className="w-full h-full items-center flex flex-col gap-3 justify-center">
+        <h1 className="font-extrabold text-gray-800 ">Skill Traders</h1>
+        <p className="text-lg text-gray-600 mb-5">Trade skills, not money.</p>
 
         <div className="flex justify-center gap-4">
           <Link

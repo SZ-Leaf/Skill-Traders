@@ -36,8 +36,7 @@ const Router = () => {
             path="/dashboard"
             element={
               <Layout>
-                {" "}
-                <Dashboard />{" "}
+                <Dashboard />
               </Layout>
             }
           />
