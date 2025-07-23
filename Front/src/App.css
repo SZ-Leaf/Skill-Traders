@@ -3,3 +3,7 @@
 *{
     box-sizing: border-box;
 }
+
+.main-title{
+    @apply font-extrabold text-white text-5xl sm:text-7xl;
+}
