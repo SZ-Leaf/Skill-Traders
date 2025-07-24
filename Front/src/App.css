@@ -7,3 +7,10 @@
 .main-title{
     @apply font-extrabold text-white text-5xl sm:text-7xl;
 }
+
+.login-btn{
+    @apply bg-white text-orange-600 hover:bg-gray-100 font-semibold px-4 py-2 rounded-lg shadow;
+}
+.sign-up-btn{
+    @apply bg-white text-green-600 hover:bg-gray-100 font-semibold px-4 py-2 rounded-lg shadow;
+}
