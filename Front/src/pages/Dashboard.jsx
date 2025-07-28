@@ -32,15 +32,20 @@ const Dashboard = () => {
   };
 
   return (
-    <>
-      <div className="tab-buttons">
-        <button onClick={() => setActiveTab("browse")}>Browse</button>
-        <button onClick={() => setActiveTab("myListings")}>My Listings</button>
-        <button onClick={() => setActiveTab("myRequests")}>My Requests</button>
+    <div className="flex flex-col content-center items-center gap-5 p-5 h-full">
+      <h1 className="main-title">Skill Traders</h1>
+      <div className="tab-buttons w-4/5 flex flex-col gap-10">
+
+        <div className="dashboard-browse-nav">
+          <button onClick={() => setActiveTab("browse")} className={`browse-nav-element ${activeTab === "browse" ? "active-btn" : ""}`} id="browse-btn">Browse</button>
+          <button onClick={() => setActiveTab("myListings")} className={`browse-nav-element ${activeTab === "myListings" ? "active-btn" : ""}`}>My Listings</button>
+          <button onClick={() => setActiveTab("myRequests")} className={`browse-nav-element ${activeTab === "myRequests" ? "active-btn" : ""}`}>My Requests</button>
+        </div>
+
+        {renderTabContent()}
       </div>
 
-      {renderTabContent()}
-    </>
+    </div>
   );
 };
 

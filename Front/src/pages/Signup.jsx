@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 
 const Signup = () => {
-   
+
    const navigate = useNavigate();
    const [message, setMessage] = useState(null);
-   
+
    const handleRegistration = async (event) => {
       event.preventDefault();
 
@@ -16,7 +16,7 @@ const Signup = () => {
       const password = event.target.password.value;
       const confirmPassword = event.target.confirmPassword.value;
 
-      const userRegistration ={
+      const userRegistration = {
          firstName: firstName,
          lastName: lastName,
          userName: userName,
@@ -30,21 +30,21 @@ const Signup = () => {
          return;
       }
 
-      try{
+      try {
          const userRegistrationResponse = await fetch('/api/register', {
             method: "POST",
-            headers:{
+            headers: {
                'Content-Type': 'application/json'
             },
             body: JSON.stringify(userRegistration),
          });
-         if(!userRegistrationResponse.ok){
+         if (!userRegistrationResponse.ok) {
             setMessage('Registration failed, please try again.')
             return;
          }
 
          setMessage('Registration successful ! Redirecting to login page...');
-         setTimeout(() =>{
+         setTimeout(() => {
             navigate('/login');
          }, 2000);
       } catch (error) {
@@ -52,41 +52,59 @@ const Signup = () => {
          console.error(error);
       }
    };
-   
-   return(
-      <>
-         <h2>Sign Up</h2>
 
-         <form onSubmit={handleRegistration}>
+   return (
+      <div className="w-full h-full items-center flex flex-col gap-5 justify-center">
+         <h1 className="main-title">Skill Traders</h1>
+         <h2 className="register-title">Register</h2>
 
-               <label>
+         <form onSubmit={handleRegistration} className="form-style">
+
+            <div className="label-div-container">
+               <label htmlFor="firstname" className="label-style">
                   First Name:
-                  <input type="text" name="firstName" />
                </label>
-               <label>
-                  Last Name:
-                  <input type="text" name="lastName" />
-               </label>
-               <label>
-                  UserName:
-                  <input type="text" name="userName" />
-               </label>
-               <label>
-                  Email:
-                  <input type="email" name="email" />
-               </label>
-               <label>
-                  Password:
-                  <input type="password" name="password" />
-               </label>
-               <label>
-                  Confirm Password:
-                  <input type="password" name="confirmPassword" />
-               </label>
+               <input type="text" name="firstName" id="firstname" className="input-style"/>
+            </div>
 
-               <button className="btn" type="submit">Register</button>
+            <div className="label-div-container">
+               <label htmlFor="lastname" className="label-style">
+                  Last Name:
+               </label>
+               <input type="text" name="lastName" id="lastname" className="input-style"/>
+            </div>
+
+            <div className="label-div-container">
+               <label htmlFor="email" className="label-style">
+                  Email:
+               </label>
+               <input type="email" name="email" id="email" className="input-style"/>
+            </div>
+            
+            <div className="label-div-container">
+               <label htmlFor="userName" className="label-style">
+                  UserName:
+               </label>
+               <input type="text" name="userName" id="userName" className="input-style"/>
+            </div>
+
+            <div className="label-div-container">
+               <label htmlFor="password" className="label-style">
+                  Password:
+               </label>
+               <input type="password" name="password" id="password" className="input-style"/>
+            </div>
+
+            <div className="label-div-container">
+               <label htmlFor="confirmPassword" className="label-style">
+                  Confirm Pass:
+               </label>
+               <input type="password" name="confirmPassword" id="confirmPassword" className="input-style"/>
+            </div>
+
+            <button className="sign-up-btn w-30 self-center" type="submit">Sign Up</button>
          </form>
-      </>
+      </div>
    )
 }
 

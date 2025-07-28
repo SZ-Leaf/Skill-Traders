@@ -2,7 +2,7 @@ import { Outlet } from "react-router";
 
 const Layout = () => {
   return (
-    <main className="w-full bg-gradient-to-r from-green-500 via-yellow-400 to-orange-500">
+    <main className="w-full bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50]">
       <Outlet />
     </main>
   );

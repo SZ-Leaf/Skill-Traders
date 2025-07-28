@@ -47,23 +47,20 @@ const Signin = () => {
       <div className="w-full h-full items-center flex flex-col gap-5 justify-center">
         <h1 className="main-title">Skill Traders</h1>
 
-        <form onSubmit={handleLogin} className="flex flex-col gap-4 max-w-sm w-full">
-          <div className="flex flex-col text-center sm:flex-row items-center gap-4">
-            <label htmlFor="username" className="text-gray-600 sm:text-right w-24">
+        <form onSubmit={handleLogin} className="form-style">
+          <div className="label-div-container">
+            <label htmlFor="username" className="label-style">
               Username:
             </label>
-            <input type="text" name="username" id="username" className="w-40 sm:w-auto px-3 py-1 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" />
+            <input type="text" name="username" id="username" className="input-style" />
           </div>
-          <div className="flex flex-col text-center sm:flex-row items-center gap-4">
-            <label htmlFor="password" className="text-gray-600 w-24 sm:text-right">
+          <div className="label-div-container">
+            <label htmlFor="password" className="label-style">
               Password:
             </label>
-            <input type="password" name="password" id="password" className="w-40 sm:w-auto px-3 py-1 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" />
+            <input type="password" name="password" id="password" className="input-style" />
           </div>
-          <button
-            className="login-btn self-center"
-            type="submit"
-          >
+          <button className="login-btn self-center" type="submit">
             Login
           </button>
         </form>
